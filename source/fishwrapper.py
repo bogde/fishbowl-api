@@ -128,6 +128,13 @@ class Fishbowlapi:
 		self.response = self.get_response()
 		print self.response
 		return self.response
+	def light_part_list(self):
+		""" Get light part list """
+		xml = xmlrequests.LightPartList(key=self.key).request
+		self.stream.send(msg(xml))
+		self.response = self.get_response()
+		print self.response
+		return self.response
 
 # global functions
 def xmlparse(xml):
