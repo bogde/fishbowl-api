@@ -29,8 +29,8 @@ class Fishbowlapi:
 		""" open socket stream and set timeout """
 		self.stream = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		self.stream.connect((self.host, self.port))
-		# timeout after 5 seconds
-		self.stream.settimeout(5)
+		# timeout after 60 seconds
+		self.stream.settimeout(60)
 	def get_response(self):
 		""" get server response """
 		packed_length = self.stream.recv(4)
